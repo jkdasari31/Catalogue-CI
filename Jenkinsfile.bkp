@@ -57,11 +57,10 @@ pipeline {
         // }
         stage('Build') {
             steps {
-                // zip -q -r catalogue.zip ./* -x ".git" -x "*.zip"
-                // ls -ltr
                 sh """
                     ls -la
-                    
+                    zip -q -r catalogue.zip ./* -x ".git" -x "*.zip"
+                    ls -ltr
                 """
             }
         }
