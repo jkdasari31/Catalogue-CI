@@ -34,13 +34,13 @@ pipeline {
                 }
             }
         }
-        // stage('Install dependencies') {
-        //     steps {
-        //         sh """
-        //             npm install
-        //         """
-        //     }
-        // }
+        stage('Install dependencies') {
+            steps {
+                sh """
+                    npm install
+                """
+            }
+        }
         stage('Unit tests') {
             steps {
                 sh """
@@ -48,13 +48,13 @@ pipeline {
                 """
             }
         }
-        stage('Sonar Scan'){
-            steps{
-                sh """
-                    sonar-scanner
-                """
-            }
-        }
+        // stage('Sonar Scan'){
+        //     steps{
+        //         sh """
+        //             sonar-scanner
+        //         """
+        //     }
+        // }
         // stage('Build') {
         //     steps {
         //         sh """
