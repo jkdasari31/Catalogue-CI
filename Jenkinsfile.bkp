@@ -9,7 +9,7 @@ pipeline {
         nexusURL = '172.31.20.61:8081'  // nexus pvt ip address needs be changed
     }
     options {
-        timeout(time: 10, unit: 'MINUTES')
+        timeout(time: 20, unit: 'MINUTES')
         disableConcurrentBuilds()
     }
     parameters {
@@ -86,7 +86,7 @@ pipeline {
         stage('Deploy') {
             when {
                 expression{
-                    params.Deploy == 'true'
+                    params.Deploy == 'false'
                 }
             }
             steps {
